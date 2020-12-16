@@ -1,36 +1,40 @@
 <?php
 
 include("Dbconnection.php");
+?>
+<?php
 if(isset($_POST['save']))
 {
-	
-	
-/*$id=$_POST['txtid'];*/
+  $sid=$_POST['txtid'];
 	$name=$_POST['txtname'];
 	$post=$_POST['post'];
 	$address=$_POST['txtadd'];
-	$sex=$_POST['sex'];
+	$gender=$_POST['sex'];
 	$email=$_POST['txtemail'];
 	$phone=$_POST['txtphone'];
-	$image_path=$_POST['image'];
+	$filename = $_FILES["images"]["name"];
+  $tempname = $_FILES["images"]["tmp_name"];
+  $folder = "uploads/".$filename;
 	$username=$_POST['username'];
-	$password=$_POST['txtpass'];
-	$sql="INSERT INTO staff_details values('$id','$name','$post','$address','$sex','$email','$phone','$image_path','$username','$password')";
-	move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);
-	mysqli_query("INSERT INTO login_tb1(username,password)values('$username','$password')");
-/*$upd=mysql_query("update param set p_id='$id'");*/
+	$password=$_POST['password'];
+	$sql="INSERT INTO staff_reg values('$sid','$name','$post','$address','$gender','$email','$phone','$filename','$username','$password')";
+//  $sql1="INSERT INTO login_tb(post,username,password) SELECT post,username,password FROM staff_details";
+//&& mysqli_query($con,$sql1)
 
-	if (mysqli_query($con, $sql)) {
-      echo "New record created successfully";
-	} 
-	else 
+	//move_uploaded_file($tempname, $folder);
+
+	if (mysqli_query($con,$sql) )
+  {
+?>
+	<script>
+		alert("Successfully saved");
+		window.location="add_staff.php";
+	</script>
+<?php 	}
+	else
 	{
       echo "Error: " . $sql . "<br>" . mysqli_error($con);
 	}
-}
 
+}
 ?>
-<script>
-alert("Successfully saved");
-window.location="add_staff2.php";
-</script>

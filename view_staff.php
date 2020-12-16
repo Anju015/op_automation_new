@@ -1,9 +1,7 @@
 
 <title>chc_puthenchira</title>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/menu.css">
-<link rel="stylesheet" href="../css/tabl_design.css">
 <link rel="stylesheet" type="text/css" href="../css/home.css">
 <!-- style css -->
 
@@ -18,20 +16,19 @@
  	.table-content td {padding:5px 20px; border-bottom: #F0F0F0 1px solid;vertical-align:top;}
 
   </style>
-
   <meta charset="utf-8">
 	<title>chc puthenchira</title>
-  <script>
-      function pageRedirect() {
-        window.location.href = "admin_home.php";
-      }
-  </script>
+     <script>
+    function pageRedirect() {
+      window.location.href = "admin_home.php";
+    }
+</script>
 </head>
 <body background="images/b2.jpg">
- <div class="body" style="height:100%;">
+ <div class="body" style="height: 700px;">
   <div class="top1">
 	 <div class="logo">
-		<img src="../images/healthcare-bubble.jpg">
+			<img src="../images/healthcare-bubble.jpg">
 	 </div>
    <div class="head">
 	  <center>
@@ -47,7 +44,7 @@
 <!------ --->
 <div class="admin_body" style="margin-left: 20px;margin-top: 8px;overflow: hidden; background-color:#442D96;">
  <center>
-
+  <div class="part" style="width: 1000px; height=100px;">
 	 <h2 style="color: cornsilk;margin-top: 25px;">VIEW STAFFS</h4>
     <div class="modal-body" style="margin-top: 10px;">
  		 <table>
@@ -67,19 +64,8 @@
         <tr>
           <td>
            <center>
-             <input type="submit" value="BACK" name="btnback" onClick=")"/>
-             <?php
-                if (isset($_POST['btnback'])) {
-
-            ?>
-              <script>
-                  window.location.href="admin_home.php"
-              </script>
-            <?php
-                  // code...
-                }
-              ?>
-				     <input type="submit"  value="SHOW" name="view"/>
+             <input type="submit" value="BACK" onClick="pageRedirect()">
+				     <input type="submit"  value="SHOW" name="view" onClick="return cc()"/>
 				    </center>
           </td>
         </tr>
@@ -94,6 +80,8 @@
               <th width="50%"><span>Address</span></th>
               <th width="50%"><span>Phone Number</span></th>
               <th width="50%"><span>email</span></th>
+              <th width="50%"><span>User Name</span></th>
+              <th width="50%"><span>Password</span></th>
            </tr>
            </thead>
          <tbody>
@@ -126,6 +114,8 @@
                 <td style="color:white;"><?php echo $row["address"]; ?></td>
                 <td style="color:white;"><?php echo $row["phone"]; ?></td>
                 <td style="color:white;"><?php echo $row["email"]; ?></td>
+                <td style="color:white;"><?php echo $row["username"]; ?></td>
+                <td style="color:white;"><?php echo $row["password"]; ?></td>  
               </tr>
 
             <?php

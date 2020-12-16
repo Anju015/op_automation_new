@@ -38,9 +38,15 @@
         <div class="dropdown-content">
           <a href="add_staff.php">ADD </a>
           <a href="remove_staff.php">REMOVE </a>
-          <a href="#">EDIT </a>
+          <a href="edit2.php">EDIT </a>
           <a href="view_staff.php">VIEW </a>
         </div>
+      </div>
+        <div class="dropdown">
+        <button class="dropbtn"><b>PATIENTS </b></button>
+        <div class="dropdown-content">
+          <a href="patient_view.php">VIEW </a>
+			  </div>
       </div>
          <a href="../logout.php"><b style="color:white;font-size:22px;">LOGOUT</b></a>
     </div>

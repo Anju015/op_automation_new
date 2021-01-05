@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost:3306","root","Anusree@1","opautomation");
+$con=mysqli_connect("localhost:3306","root","","opautomation");
 if(!$con)
 {
 	echo("connection failed");

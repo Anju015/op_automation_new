@@ -1,0 +1,15 @@
+.box{
+border-style:solid;
+	border-color:#000000;
+	padding:60px 50px 60px 50px;
+	width:500px;
+	border-width:5px;
+margin:50px 50px 90px 150px;
+border-radius:35px;
+    box-shadow: 10px 20px 10px ;
+background-color:#FFFFFF;
+color:#000000;
+font-size:18px;
+}
+
+
